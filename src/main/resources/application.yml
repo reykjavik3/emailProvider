@@ -1,0 +1,15 @@
+server:  
+  port: 8999  
+  servlet.path: /email-provider
+  tomcat:
+    basedir: 
+    accesslog:
+      enabled: true
+      directory: ./logs
+      pattern: "%{X-Forwarded-For}i %a %{X-B3-TraceId}i %t %m %U %s %b %D"
+      rename-on-rotate: true
+      suffix: .log
+      prefix: access
+      rotate: true
+      buffered: false
+      file-date-format: yyyy-MM-dd
